@@ -1,23 +1,31 @@
 {{ block title }}Results{{ endblock }}
 {{ block content }}
 
-    {{ if player.id_in_group == 1 }}
-        <p>
-            You sent Participant B {{ group.sent_amount }}.
-            Participant B returned {{ group.sent_back_amount }}.
-        </p>
-    {{ else }}
-        <p>
-            Participant A sent you {{ group.sent_amount }}.
-            You returned {{ group.sent_back_amount }}.
-        </p>
 
-    {{ endif }}
 
-    <p>
-        Therefore, your total payoff is {{ player.payoff }}.
-    </p>
+    <table>
+        <tr>
+          <th>Round</th>
+          <td>1</td>
+        </tr>
+        <tr>
+          <th>Your Payoff</th>
+          <td>{{ player.payoff }}</td>
+        </tr>
+        <tr>
+          <th>Your Partner Payoff</th>
+          <td></td>
+        </tr>
+    </table>
+
+
 
     {{ include C.INSTRUCTIONS_TEMPLATE }}
+
+
+
+
+
+
 
 {{ endblock }}
